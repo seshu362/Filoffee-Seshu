@@ -1,0 +1,44 @@
+.task-item td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  word-wrap: break-word; 
+  word-break: break-word; 
+  max-width: 300px; 
+  vertical-align: top; 
+}
+
+
+.task-item button {
+  padding: 8px 12px;
+  background-color: #00cec9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+
+.task-item button:hover {
+  background-color: #00b894;
+}
+
+.task-item button.delete {
+  background-color: #d63031;
+  margin: 5px;
+}
+
+.task-item button.delete:hover {
+  background-color: #e74c3c;
+}
+
+
+.task-item .task-description {
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 300px;
+  white-space: normal; 
+}
