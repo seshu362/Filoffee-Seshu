@@ -1,100 +1,60 @@
-The goal of this coding exam is to quickly get you off the ground with **Lists and Keys**.
+# Task Tracker Application
 
-### Refer to the image below:
+A React-based task tracker application that allows users to add, edit, and delete tasks. It supports storing tasks in the browser's localStorage and provides an interactive UI for managing tasks with details like title, description, due date, and status.
 
-<br>
-<div style="text-align: center;">
-  <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/my-tasks-output.mp4" type="video/mp4">
-    
-  </video>
-</div>
-<br/>
+## Project Setup Instructions
 
-### Design Files
+To set up and run the project locally, follow these steps:
 
-<details>
-<summary>Click to view</summary>
+1. **Install dependencies :** Ensure you have Node.js and npm installed. If not, download them from Node.js. Then, install the necessary packages:
+   ```bash
+   npm install
 
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - No Tasks View](https://assets.ccbp.in/frontend/content/react-js/my-tasks-output-no-tasks-view.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/my-tasks-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Filter View](https://assets.ccbp.in/frontend/content/react-js/my-tasks-output-filter-view.png)
+2. **Run the application :**  Start the development server:
+   ```bash
+   npm start
+3. **This will run the app on**  
+   ```bash
+   http://localhost:3000
 
-</details>
+## Directory Structure
+   ```bash
+   /my-tasks
+  /src
+    /components
+      /AddTaskForm
+        AddTaskForm.js   - A form to add new tasks or edit existing ones.
+        AddTaskForm.css  - Styles for the `AddTaskForm` component.
+      /TaskList
+        TaskList.js      - Displays the list of tasks with edit and delete options.
+        TaskList.css     - Styles for the `TaskList` component.
+      /TaskItem
+        TaskItem.js      - Displays individual task details and actions (Edit/Delete).
+        TaskItem.css     - Styles for the `TaskItem` component.
+    App.js             - Main component managing state and rendering the application.
+    App.css            - Styles for the main `App` component.
+    index.js           - Entry point for the React application.
+  package.json         - Contains project dependencies and scripts.
+  package-lock.json    - Records the exact version of each installed dependency.
+  .gitignore           - Specifies which files and directories Git should ignore.
 
-### Set Up Instructions
+```  
+## Components:
+   - **App :** `` This is the root component that manages the state of the application (tasks, taskToEdit). It passes down handlers and data to child components (AddTaskForm and TaskList).``
+   - **AddTaskForm :** ``A form for adding new tasks or editing existing ones. It is controlled by the App component, which manages the task data.``
 
-<details>
-<summary>Click to view</summary>
+   - **TaskList :** ``Displays the list of tasks, including options to edit or delete tasks. It takes the list of tasks and handler functions from App.``
+   - **TaskItem :** ``Displays individual task details and provides buttons for editing and deleting each task.``
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## Challenges Faced:
+   - **State Management :** ``One challenge was efficiently managing state between parent (App) and child components (TaskList, AddTaskForm). This was handled by passing state and handler functions as props.``
+   - **Persisting Data :** ``Ensuring that tasks persist after the page reload was a challenge. We used localStorage to store the tasks, ensuring the data is retained across sessions.``
+   - **Dynamic Form Handling :** ``Ensuring that the task form could be reused for both adding new tasks and editing existing ones. This was handled by checking if taskToEdit was provided as a prop.``   
 
-### Completion Instructions
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
 
-The app must have the following functionalities
 
-- Initially, the list of tasks and `Task` input should be empty and the active option in the `Tags` select element should be the first item of the given tagsList.
-- When non-empty values are provided for Tasks, Tags and the **Add Task** button is clicked,
-  - A new task should be added to the list of tasks.
-  - The value inside the `Task` input and `Tag` select elements should be updated to their initial values.
-- When a single tag is clicked it should be changed to an active state and filtered tasks should be displayed accordingly.
-- When no tag in the list of tags is active, then all the tasks should be displayed.
-- The `App` component consists of the `tagsList`. It consists of a list of tag details objects with the following properties in each object.
-
-  |     key     | DataType |
-  | :---------: | :------: |
-  |  optionId   |  String  |
-  | displayText |  String  |
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instruction is required for the tests to pass**
-
-- Use the `uuid` package to generate the unique id.
-
-</details>
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #131213; width: 150px; padding: 10px; color: white">Hex: #131213</div>
-<div style="background-color: #f3aa4e; width: 150px; padding: 10px; color: black">Hex: #f3aa4e</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
-<div style="background-color: #64748b; width: 150px; padding: 10px; color: black">Hex: #64748b</div>
-<div style="background-color: #f8f8f8; width: 150px; padding: 10px; color: black">Hex: #f8f8f8</div>
-<div style="background-color: #475569; width: 150px; padding: 10px; color: black">Hex: #475569</div>
-<div style="background-color: #323f4b; width: 150px; padding: 10px; color: white">Hex: #323f4b</div>
-<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
-<div style="background-color: #1a171d; width: 150px; padding: 10px; color: white">Hex: #1a171d</div>
-<div style="background-color: #f8fafc; width: 150px; padding: 10px; color: black">Hex: #f8fafc</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
+## Features:
+   - **Add Task :** ``Users can add tasks with a title, description, due date, and status (Pending, In Progress, Completed).``
+   - **Edit Task :** ``Users can edit existing tasks by clicking the "Edit" button next to a task.``
+   - **Delete Task: :** ``Users can delete tasks by clicking the "Delete" button next to a task.``
